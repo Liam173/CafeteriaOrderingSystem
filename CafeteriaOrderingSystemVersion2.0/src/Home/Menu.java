@@ -166,7 +166,7 @@ public class Menu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Login login = new Login();
         Checkout.Checkout checkout = new Checkout.Checkout();
-        
+        System.out.println("Liam's change");
         String baconSandwich = item1.getValue() + "";
         String cheeseBurger = item2.getValue() + "";
         String fries = item3.getValue() + "";
