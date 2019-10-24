@@ -17,13 +17,13 @@ import javax.swing.JOptionPane;
  * @author TFVBLDVY9
  */
 public class Menu extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
-        setSize(455,654);
+        setSize(455, 654);
     }
 
     /**
@@ -162,12 +162,15 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     static String order[][] = new String[8][2];
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Login login = new Login();
+        
+        //Im done bitches
+        //Im tired
+        //Take notes
+        
         Checkout.Checkout checkout = new Checkout.Checkout();
-        System.out.println("Liam's change");
-        System.out.println("TEMPY");
         String baconSandwich = item1.getValue() + "";
         String cheeseBurger = item2.getValue() + "";
         String fries = item3.getValue() + "";
@@ -176,34 +179,35 @@ public class Menu extends javax.swing.JFrame {
         String coke = item6.getValue() + "";
         String milkshake = item7.getValue() + "";
         String coffee = item8.getValue() + "";
-        
-       order[0][0] = "Sandwich";
-       order[1][0] = "Cheese Burger";
-       order[2][0] = "Fries";
-       order[3][0] = "Hawaian Pizza";
-       order[4][0] = "Water";
-       order[5][0] = "Coke";
-       order[6][0] = "Milkshake";
-       order[7][0] = "Coffee";
-        
-       order[0][1] = baconSandwich;
-       order[1][1] = cheeseBurger;
-       order[2][1] = fries;
-       order[3][1] = hawaianPizza;
-       order[4][1] = water;
-       order[5][1] = coke;
-       order[6][1] = milkshake;
-       order[7][1] = coffee;
-       
+        System.out.println("Brendan, what the???");
+
+        order[0][0] = "Sandwich";
+        order[1][0] = "Cheese Burger";
+        order[2][0] = "Fries";
+        order[3][0] = "Hawaian Pizza";
+        order[4][0] = "Water";
+        order[5][0] = "Coke";
+        order[6][0] = "Milkshake";
+        order[7][0] = "Coffee";
+
+        order[0][1] = baconSandwich;
+        order[1][1] = cheeseBurger;
+        order[2][1] = fries;
+        order[3][1] = hawaianPizza;
+        order[4][1] = water;
+        order[5][1] = coke;
+        order[6][1] = milkshake;
+        order[7][1] = coffee;
+
         dispose();
         checkout.getOrder();
         checkout.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-    
-    public String[][] getOrders(){
+
+    public String[][] getOrders() {
         return order;
     }
-    
+
     /**
      * @param args the command line arguments
      */
