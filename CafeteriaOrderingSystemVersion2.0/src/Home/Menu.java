@@ -167,6 +167,7 @@ public class Menu extends javax.swing.JFrame {
         Login login = new Login();
         Checkout.Checkout checkout = new Checkout.Checkout();
         System.out.println("Liam's change");
+        System.out.println("TEMPY");
         String baconSandwich = item1.getValue() + "";
         String cheeseBurger = item2.getValue() + "";
         String fries = item3.getValue() + "";
