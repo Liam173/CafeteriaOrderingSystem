@@ -131,6 +131,7 @@ public class Checkout extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("brendan's change");
+        System.out.println("another line");
         Login login = new Login();
         PreparedStatement ps;
         ResultSet rs;
