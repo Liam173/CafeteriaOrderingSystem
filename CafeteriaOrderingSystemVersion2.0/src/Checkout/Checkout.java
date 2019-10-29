@@ -8,15 +8,10 @@ package Checkout;
 import Home.Menu;
 import Login.Login;
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.TextArea;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 
 /**
  *
@@ -165,6 +160,17 @@ public class Checkout extends javax.swing.JFrame {
             
         } catch (SQLException ex) {
             System.out.println("error " + ex );
+        }
+        
+        String[] exitOptions = {"Place A New Order","No, Please Exit"};
+        
+        int exitOption = JOptionPane.showOptionDialog(this, "Do you want to place another order?", "Order Placed!", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, exitOptions, exitOptions[1]);
+        
+        if (exitOption == 0) {
+            dispose();
+            new Home.Menu().setVisible(true);
+        } else {
+            System.exit(0);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

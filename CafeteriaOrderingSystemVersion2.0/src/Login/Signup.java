@@ -119,33 +119,37 @@ public class Signup extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-        PreparedStatement ps;
-        ResultSet rs;
-        String uname = email_field.getText();
-        char[] pass = password_field.getPassword();
-        
-        String password = "";
-        
-        String query = "INSERT INTO users (email, password) VALUES (?, ?)";
-        
-        for (int i = 0; i < pass.length; i++) {
-            password = password + pass[i];
-        }
-        
-        try {
-            ps = mysql.connectToSql.getConnection().prepareStatement(query);
-            
-            ps.setString(1, uname);
-            ps.setString(2, password);
-            
-            ps.executeUpdate();
-            
-            Home.Menu menu = new Home.Menu();
-            dispose();
-            menu.setVisible(true);
-            
-        } catch (SQLException ex) {
-            System.out.println("error " + ex );
+        if ((email_field.getText().length() != 0) && (password_field.getPassword().length != 0)) {
+            PreparedStatement ps;
+            ResultSet rs;
+            String uname = email_field.getText();
+            char[] pass = password_field.getPassword();
+
+            String password = "";
+
+            String query = "INSERT INTO users (email, password) VALUES (?, ?)";
+
+            for (int i = 0; i < pass.length; i++) {
+                password = password + pass[i];
+            }
+
+            try {
+                ps = mysql.connectToSql.getConnection().prepareStatement(query);
+
+                ps.setString(1, uname);
+                ps.setString(2, password);
+
+                ps.executeUpdate();
+
+                Home.Menu menu = new Home.Menu();
+                dispose();
+                menu.setVisible(true);
+
+            } catch (SQLException ex) {
+                System.out.println("error " + ex );
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "please enter valid username or password");
         }
     }//GEN-LAST:event_signupActionPerformed
 
