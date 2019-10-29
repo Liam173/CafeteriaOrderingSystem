@@ -43,8 +43,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         email_field = new javax.swing.JTextField();
         login = new javax.swing.JButton();
-        signup = new javax.swing.JButton();
         password_field = new javax.swing.JPasswordField();
+        signUp = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,11 +64,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        signup.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        signup.setText("Sign up");
-        signup.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupActionPerformed(evt);
+        signUp.setBackground(new java.awt.Color(47, 141, 255));
+        signUp.setForeground(new java.awt.Color(47, 141, 255));
+        signUp.setText("No Account ? Click Here!");
+        signUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signUpMouseClicked(evt);
             }
         });
 
@@ -78,16 +79,15 @@ public class Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(password_field, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(email_field, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)))
+                        .addComponent(signUp)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password_field, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(email_field, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -101,11 +101,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signup)
-                    .addComponent(login))
-                .addGap(65, 65, 65))
+                    .addComponent(login)
+                    .addComponent(signUp))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/resources/feedem logo.jpg"))); // NOI18N
@@ -167,10 +167,12 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginActionPerformed
 
-    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+    private void signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseClicked
+        email = email_field.getText();
+        
         new Signup().setVisible(true);
         dispose();
-    }//GEN-LAST:event_signupActionPerformed
+    }//GEN-LAST:event_signUpMouseClicked
 
     /**
      * @param args the command line arguments
@@ -215,6 +217,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password_field;
-    private javax.swing.JButton signup;
+    private javax.swing.JLabel signUp;
     // End of variables declaration//GEN-END:variables
 }
