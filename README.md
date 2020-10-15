@@ -1,4 +1,1 @@
-"# sp" 
-"# this is a README File for our SP project" 
-"# line that shows where you are"
-"# brendan's change"
+This is a second year project I worked on in a group of 5 people. Our idea was to create a program to support the cafeteria at my campus, to allow students to order food through the help of an application or program.
